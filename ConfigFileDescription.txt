@@ -1,0 +1,33 @@
+The configuration JSON file contains the following objects:
+
+A. network_config: Contains parameters for the reaction network example. 
+	1. network_name: The name of the reaction network example class (must be defined in ReactionNetworkExamples.py).
+	2. output_folder_name: The output folder where results are stored.
+	3. stop_time: This is the time T_f which specifies the simulation time-period.
+	4. cut_off_time: This is the time T_c at which stationarity is assumed to be reached. The part of the trajectory in the time-period [0, T_c] is ignored for PSD estimation. 
+	5. analytical_psd_available: "True" if exact analytical expression of the PSD is available (defined in the appropriate example class in ReactionNetworkExamples.py). This exact expression is only used for comparison. 
+
+
+B. data sampling_config: Contains parameters for the DFT-based estimation of the PSD.
+
+	1. new_data_required: "True" if new discrete sampled trajectories should be generated. Otherwise previously saved trajectories are used. 
+	2. num_time_samples: Number of sampling timepoints in the interval [T_c, T_f]
+	3. num_trajectories: Number of single-cell trajectories whose DFTs is averaged to obtain the final DFT-based PSD estimate. 
+
+C. Pade_Approximation_config: Contains parameters describing estimation of outputs with Monte Carlo simulations (with the stochastic simulation algorithm (SSA)) and the parameter sensitivities (with the Bernoulli path algorithm (BPA)). 
+
+	1. pade_derivative_estimation_required: "True" if Padé derivatives need to be estimated. Otherwise previously saved values are used.
+	2. order: The pair of nonnegative integers (with even sum) that specify the order of the Padé approximant.	
+	3. num_time_samples: Number of sampling timepoints in the interval [T_c, T_f]. This is for temporal averaging in the Monte Carlo estimators for the Padé derivatives.  
+	4. num_trajectories: Species the number of trajectories for simulation-based estimates.  
+	5. s0: The value of s0 at which Padé derivatives are matched. The other matching point is fixed to infinity.
+	3. test_s_values: The list of s-values (positive real numbers) at which direct estimates are obtain for function G(s) for validation.
+
+D. Plotting_config: Contains parameters for sensitivity bar charts.
+	1. ratio_omega_max_vs_pi: Specifies the frequency plotting range as a multiple of pi.
+	2. num_trajectories: Number of single-cell trajectories to be plotted.
+	3. trajectory_length: The length of the trajectory (from the end) to be plotted.  
+	4. normalization:  "True" if normalised PSD estimate should be plotted. This normalisation is by the area under the PSD curve. 
+
+
+

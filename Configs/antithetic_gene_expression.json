@@ -1,0 +1,28 @@
+{
+    "network_config": {
+    "network_name": "antithetic_gene_expression_network",
+    "output_folder_name": "antithetic_gene_expression_network_base",
+    "stop_time": 10100,
+    "cut_off_time": 100,
+    "analytical_psd_available": "False"
+  },
+  "data sampling_config": {
+    "new_data_required": "True",
+    "num_time_samples": 10000,
+    "num_trajectories": 10
+  },
+  "Pade_Approximation_config": {
+    "pade_derivative_estimation_required": "True",
+    "order": [4, 0],
+    "num_time_samples": 10000,
+    "num_trajectories": 10,
+    "s_0": 1.0,
+    "test_s_values": [0.5, 0.75, 1.25, 1.5]
+  },
+  "Plotting_config":{
+    "ratio_omega_max_vs_pi": 1,
+    "num_trajectories": 2,
+    "trajectory_length": 100,
+    "normalization": "True"
+  }
+}
