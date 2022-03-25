@@ -13,7 +13,7 @@ plt.rcParams.update({
     "text.latex.preamble": [r'\usepackage{sfmath} \boldmath'],
     "xtick.labelsize": 15,  # large tick labels
     'font.size': 15,
-    'figure.figsize': [400/72, 300/72]}  # default: 6.4 and 4.8
+    'figure.figsize': [6.4, 4.8]}  # default: 6.4 and 4.8 620/72, 300/72
 )
 legend_font = font_manager.FontProperties(family='Arial',
                                           weight='bold',
@@ -22,6 +22,7 @@ legend_font = font_manager.FontProperties(family='Arial',
 
 def plotFunctionTrajectory(xvalues, yvalues, num_trajectories, trajectory_length, results_folder_path, save_pdf=False):
     sns.set_style("ticks")
+
     sns.set_context("paper", font_scale=1.4)
     time_step = xvalues[1] - xvalues[0]
     num_time_points = int(trajectory_length / time_step) + 1

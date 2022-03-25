@@ -48,7 +48,7 @@ class ReactionNetworkDefinition(object):
 
     def hill_propensity_repression(self, state, species_no, parameter_key1, parameter_key2, parameter_key3,
                                    parameter_key4):
-        # implements propensity  a/(k + x^h) with x=X[species_no] + b
+        # implements propensity   b + a/(k + x^h) with x=X[species_no]
         a = self.parameter_dict[parameter_key1]
         k = self.parameter_dict[parameter_key2]
         h = self.parameter_dict[parameter_key3]

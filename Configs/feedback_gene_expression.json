@@ -1,10 +1,10 @@
 {
   "network_config": {
-    "network_name": "negative_feedforward_network",
-    "output_folder_name": "negative_feedforward_network",
+    "network_name": "feedback_gene_expression_network",
+    "output_folder_name": "feedback_gene_expression/",
     "stop_time": 10100,
     "cut_off_time": 100,
-    "analytical_psd_available": "True"
+    "analytical_psd_available": "False"
   },
   "data sampling_config": {
     "new_data_required": "True",
@@ -14,17 +14,17 @@
   "Pade_Approximation_config": {
     "pade_derivative_estimation_required": "True",
     "known_den_poly_coeffs": [],
-    "order": [4],
+    "order": [2, 2],
     "rational_approx_degree": 2,
     "num_time_samples": 10000,
     "num_trajectories": 10,
-    "s_vals": ["infinity"],
+    "s_vals": [1.0, "infinity"],
     "test_s_values": [0.3, 0.6, 0.9, 1.2, 1.5]
   },
   "Plotting_config":{
     "ratio_omega_max_vs_pi": 1,
     "num_trajectories": 2,
     "trajectory_length": 100,
-    "normalization": "False"
+    "normalization": "Tru"
   }
 }

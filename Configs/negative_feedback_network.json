@@ -13,16 +13,19 @@
   },
   "Pade_Approximation_config": {
     "pade_derivative_estimation_required": "True",
-    "order": [0, 4],
+    "known_den_poly_coeffs": [],
+    "order": [4],
+    "rational_approx_degree": 2,
     "num_time_samples": 10000,
     "num_trajectories": 10,
-    "s_0": 1.0,
-    "test_s_values": [0.5, 0.75, 1.25, 1.5]
+    "s_vals": ["infinity"],
+    "test_s_values": [0.3, 0.6, 0.9, 1.2, 1.5]
+
   },
   "Plotting_config":{
-    "ratio_omega_max_vs_pi": 0.64,
+    "ratio_omega_max_vs_pi": 1,
     "num_trajectories": 2,
     "trajectory_length": 100,
-    "normalization": "True"
+    "normalization": "False"
   }
 }

@@ -17,11 +17,13 @@ B. data sampling_config: Contains parameters for the DFT-based estimation of the
 C. Pade_Approximation_config: Contains parameters describing estimation of outputs with Monte Carlo simulations (with the stochastic simulation algorithm (SSA)) and the parameter sensitivities (with the Bernoulli path algorithm (BPA)). 
 
 	1. pade_derivative_estimation_required: "True" if Padé derivatives need to be estimated. Otherwise previously saved values are used.
-	2. order: The pair of nonnegative integers (with even sum) that specify the order of the Padé approximant.	
-	3. num_time_samples: Number of sampling timepoints in the interval [T_c, T_f]. This is for temporal averaging in the Monte Carlo estimators for the Padé derivatives.  
-	4. num_trajectories: Species the number of trajectories for simulation-based estimates.  
-	5. s0: The value of s0 at which Padé derivatives are matched. The other matching point is fixed to infinity.
-	3. test_s_values: The list of s-values (positive real numbers) at which direct estimates are obtain for function G(s) for validation.
+	2. known_den_poly_coeffs: These are the coefficients of the polynomial B(s) that is a factor in the denominator of the Padé approximant. The polynomial is monic (i.e. leading coefficient is 1) and so the leading coefficient is omitted. 
+	3. order: A list of nonnegative integers (denoted by \rho in the paper) that specify the number of Padé derivatives to be estimated at the designated s_values.
+	4. "rational_approx_degree": Degree p of the denominator of the Padé approximant.	
+	5. num_time_samples: Number of sampling timepoints in the interval [T_c, T_f]. This is for temporal averaging in the Monte Carlo estimators for the Padé derivatives.  
+	6. num_trajectories: Species the number of trajectories for simulation-based estimates.  
+	7. s_vals: A list of s-values on the positive extended real line where the Padé derivatives are to be estimated. The value infinity must be in double quotes. 
+	8. test_s_values: The list of s-values (positive real numbers) at which direct estimates are obtain for function G(s) for validation.
 
 D. Plotting_config: Contains parameters for sensitivity bar charts.
 	1. ratio_omega_max_vs_pi: Specifies the frequency plotting range as a multiple of pi.
